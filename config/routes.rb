@@ -1,4 +1,16 @@
 Authentification::Application.routes.draw do
+  resources :users
+
+  #root 'users#index', as: 'home'
+
+  #get 'login' => 'users#new' as: 'login'
+
+  #get 'signup' => 'users#new' as: 'signup'
+
+  match '/home',  to: 'users#index'
+
+  match '/signup',  to: 'users#new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
